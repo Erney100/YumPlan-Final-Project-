@@ -49,7 +49,7 @@ The goal of the app is to make meal planning less stressful and more organized f
 
 # GitHub Repository
 
-(Put it here jerney)
+https://github.com/Erney100/YumPlan-Final-Project-/
 
 
 # Setup Instructions
@@ -57,7 +57,7 @@ The goal of the app is to make meal planning less stressful and more organized f
 ## Clone Repository
 
 ```bash
-git clone YOUR_GITHUB_LINK_HERE
+git clone https://github.com/Erney100/YumPlan-Final-Project-/
 ```
 
 ---
