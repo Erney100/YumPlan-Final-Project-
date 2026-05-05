@@ -1,0 +1,567 @@
+/* 
+  Importing Google Fonts.
+  Fredoka is used for headings because it has a cute, rounded style.
+  Poppins is used for regular text because it is clean and easy to read.
+*/
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+/* 
+  Makes sizing easier.
+  Padding and borders will be included inside the element's total width/height.
+*/
+* {
+  box-sizing: border-box;
+}
+
+/* 
+  Main page styling.
+  This sets the background color, default font, and text color for the whole app.
+*/
+body {
+  margin: 0;
+  background-color: #fff3d6;
+  font-family: "Poppins", sans-serif;
+  color: #174f2a;
+}
+
+/* 
+  Removes underlines from links and makes links use the same color as their parent.
+*/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+/* 
+  Styles the top navigation bar.
+  Flexbox puts the logo on the left and the links on the right.
+  Sticky keeps the navbar visible at the top while scrolling.
+*/
+nav {
+  background-color: #fff8df;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #ffb703;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* 
+  Styles the YumPlan logo/title in the navbar.
+*/
+nav h2 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 30px;
+  margin: 0;
+  color: #c1121f;
+}
+
+/* 
+  Holds all navbar links in a row.
+  align-items centers them vertically with the profile button.
+*/
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-weight: 600;
+}
+
+/* 
+  Sets the default link color.
+*/
+.nav-links a {
+  color: #174f2a;
+}
+
+/* 
+  Changes link color when the user hovers over it.
+  This gives the navbar a small interactive effect.
+*/
+.nav-links a:hover {
+  color: #ff6b00;
+}
+
+/* =========================
+   PROFILE / LOGOUT MENU
+   ========================= */
+
+/* 
+  Holds the welcome text and profile icon.
+  position: relative allows the logout menu to position itself under this area.
+*/
+.profile-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 
+  Styles the "Hi, username" text.
+  white-space: nowrap prevents the greeting from breaking onto multiple lines.
+*/
+.welcome-text {
+  font-weight: 700;
+  color: #174f2a;
+  white-space: nowrap;
+}
+
+/* 
+  Styles the circular profile button.
+  Flexbox centers the icon inside the circle.
+*/
+.profile-btn {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ff6b00;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+  Makes the profile button grow slightly and change color on hover.
+*/
+.profile-btn:hover {
+  transform: scale(1.08);
+  background-color: #c1121f;
+}
+
+/* 
+  Styles the small dropdown menu that appears when the profile icon is clicked.
+  absolute positions it below the profile button.
+*/
+.logout-menu {
+  position: absolute;
+  top: 58px;
+  right: 0;
+  background-color: white;
+  padding: 15px;
+  border-radius: 18px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  z-index: 1000;
+  min-width: 140px;
+}
+
+/* 
+  Styles the "Logout?" text inside the dropdown.
+*/
+.logout-menu p {
+  margin: 0 0 10px;
+  font-weight: 600;
+  color: #174f2a;
+}
+
+/* 
+  Styles the logout button inside the dropdown.
+*/
+.logout-menu button {
+  background-color: #c1121f;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* 
+  Changes the logout button color when hovered.
+*/
+.logout-menu button:hover {
+  background-color: #ff6b00;
+}
+
+/* =========================
+   GENERAL PAGE LAYOUT
+   ========================= */
+
+/* 
+  Adds spacing around the main content of each page.
+  8% gives left/right spacing that adjusts with screen size.
+*/
+.page {
+  padding: 50px 8%;
+}
+
+/* =========================
+   HOMEPAGE HERO SECTION
+   ========================= */
+
+/* 
+  Styles the big homepage banner.
+  CSS Grid creates two columns:
+  left side = text/buttons
+  right side = meal inspiration card
+*/
+.hero {
+  background: linear-gradient(135deg, #ff6b00, #c1121f);
+  color: white;
+  border-radius: 30px;
+  padding: 70px 50px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* 
+  Styles the main homepage heading.
+*/
+.hero h1 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 58px;
+  line-height: 1;
+  margin: 0 0 20px;
+}
+
+/* 
+  Styles the short description under the heading.
+  max-width keeps the paragraph from stretching too wide.
+*/
+.hero p {
+  font-size: 18px;
+  max-width: 500px;
+}
+
+/* 
+  Places the hero buttons beside each other with spacing.
+*/
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* 
+  Styles the meal inspiration card.
+  The slight rotation makes it feel playful/cutesy.
+*/
+.hero-card {
+  background-color: #fff3d6;
+  color: #174f2a;
+  border-radius: 28px;
+  padding: 25px;
+  transform: rotate(3deg);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 
+  Placeholder shown while the API meal is loading.
+*/
+.hero-food-placeholder {
+  height: 220px;
+  background: radial-gradient(circle, #ffcf33, #ff6b00);
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+}
+
+/* 
+  Styles the meal image from the external API.
+  object-fit: cover prevents the image from stretching weirdly.
+*/
+.meal-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 22px;
+  margin-bottom: 15px;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+/* 
+  Base button style used across the app.
+  border-radius: 999px creates the rounded pill shape.
+*/
+.btn {
+  border: none;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* 
+  Yellow button style for main actions.
+*/
+.btn-primary {
+  background-color: #ffcf33;
+  color: #174f2a;
+}
+
+/* 
+  White button style for secondary actions.
+*/
+.btn-secondary {
+  background-color: white;
+  color: #c1121f;
+}
+
+/* =========================
+   SECTION TITLES
+   ========================= */
+
+/* 
+  Styles headings like "Popular Meal Ideas" and "Your Saved Recipes."
+*/
+.section-title {
+  font-family: "Fredoka", sans-serif;
+  font-size: 38px;
+  margin: 55px 0 25px;
+  color: #174f2a;
+}
+
+/* =========================
+   RECIPE GRID / CARDS
+   ========================= */
+
+/* 
+  Creates a 3-column grid for recipe cards on desktop.
+*/
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* 
+  Styles each recipe card.
+*/
+.recipe-card {
+  background-color: #ffbf00;
+  border-radius: 25px;
+  padding: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 
+  Adds a hover animation so cards lift slightly.
+*/
+.recipe-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* 
+  Styles recipe images.
+  width: 100% makes the image fill the card.
+  object-fit: cover crops the image nicely.
+*/
+.recipe-img {
+  width: 100%;
+  height: 180px;
+  border-radius: 20px;
+  object-fit: cover;
+  display: block;
+  background-color: #fff3d6;
+}
+
+/* 
+  Holds recipe name and calories/favorite symbol in one row.
+*/
+.recipe-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* 
+  Styles recipe titles inside cards.
+*/
+.recipe-info h3 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 24px;
+  margin: 0;
+  color: #0f5d22;
+}
+
+/* =========================
+   LOGIN / REGISTER PAGES
+   ========================= */
+
+/* 
+  Centers the login/register card on the page.
+*/
+.login-page {
+  min-height: calc(100vh - 80px);
+  background-color: #fff3d6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+/* 
+  Styles the login/register form card.
+*/
+.login-card {
+  background-color: #0f5d22;
+  color: white;
+  width: 420px;
+  padding: 45px;
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* 
+  Styles Login/Register heading.
+*/
+.login-card h1 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 42px;
+  text-align: center;
+}
+
+/* 
+  Styles input boxes on login/register pages.
+*/
+.login-card input {
+  width: 100%;
+  padding: 16px 20px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 999px;
+  background-color: #56a866;
+  color: white;
+}
+
+/* 
+  Styles login/register buttons.
+*/
+.login-card button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 15px;
+  border: none;
+  border-radius: 999px;
+  background-color: white;
+  color: #0f5d22;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* =========================
+   ADD RECIPE FORM
+   ========================= */
+
+/* 
+  Styles the card that holds the Add Recipe form.
+*/
+.form-card {
+  background-color: #fff8df;
+  padding: 35px;
+  border-radius: 28px;
+  max-width: 700px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* 
+  Styles inputs and textareas inside the recipe form.
+*/
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 2px solid #ffbf00;
+  border-radius: 16px;
+}
+
+/* 
+  Makes textarea boxes taller so users have room to type.
+*/
+.form-card textarea {
+  min-height: 120px;
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+   ========================= */
+
+/* 
+  These styles apply when the screen is 850px wide or smaller.
+  This helps the app work on phones and tablets.
+*/
+@media (max-width: 850px) {
+  /* Stacks the navbar vertically on smaller screens. */
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Allows nav links to wrap instead of overflowing. */
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Changes hero from two columns to one column on mobile. */
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 45px 30px;
+  }
+
+  /* Makes the hero heading smaller on mobile. */
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  /* Makes recipe cards stack in one column on mobile. */
+  .recipe-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   EXTERNAL API SOURCE BUTTON
+   ========================= */
+
+/* 
+  Styles the button that links to the original recipe source.
+  This helps give credit for recipe inspiration from the external API.
+*/
+.source-btn {
+  width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 12px;
+  border: none;
+  border-radius: 999px;
+  background-color: #0f5d22;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* 
+  Adds a small hover effect to the source button.
+*/
+.source-btn:hover {
+  background-color: #174f2a;
+  transform: scale(1.03);
+}
