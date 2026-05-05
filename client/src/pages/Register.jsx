@@ -19,7 +19,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/auth/register", formData);
+      await axios.post("https://yumplan-backend.onrender.com/api/auth/register", formData);
 
       alert("Account created successfully! Please login.");
 

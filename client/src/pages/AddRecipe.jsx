@@ -20,7 +20,7 @@ function AddRecipe() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/recipes",
+        "https://yumplan-backend.onrender.com/api/recipes",
         recipe
       );
 

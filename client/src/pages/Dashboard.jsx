@@ -12,7 +12,7 @@ function Dashboard() {
 
   async function getRecipes() {
     try {
-      const response = await axios.get("http://localhost:5000/api/recipes");
+      const response = await axios.get("https://yumplan-backend.onrender.com/api/recipes");
       setRecipes(response.data);
     } catch (error) {
       console.error(error);
@@ -26,7 +26,7 @@ function Dashboard() {
 
   async function deleteRecipe(id) {
     try {
-      await axios.delete(`http://localhost:5000/api/recipes/${id}`);
+      await axios.delete(`https://yumplan-backend.onrender.com/api/recipes/${id}`);
       alert("Recipe deleted!");
       getRecipes();
     } catch (error) {
@@ -54,7 +54,7 @@ function Dashboard() {
 
   async function saveEdit(id) {
     try {
-      await axios.put(`http://localhost:5000/api/recipes/${id}`, editRecipe);
+      await axios.put(`https://yumplan-backend.onrender.com/api/recipes/${id}`, editRecipe);
 
       alert("Recipe updated!");
 
