@@ -5,6 +5,9 @@ YumPlan is a full-stack web application that helps users organize meals in one p
 Users can create recipes, save them to a database, edit or delete recipes, and discover new meal inspiration through an external API. 
 The goal of the app is to make meal planning less stressful and more organized for students, home cooks, and busy individuals.
 
+# MVP Demo
+https://1drv.ms/v/c/45f29adc61a55824/IQBT0B30KYplRaKghU4tGNxlAcz1OTsBKM2tC__qx4U_YVQ?e=QUFAsr
+
 # Features
 - User registration and login authentication
 - Logout functionality
